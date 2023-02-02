@@ -1,0 +1,594 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+html{
+    /* to make the page responsive we use 'em' & 'rem' and not in px
+    rem unit works with root element so will start from root element html */
+    /* em works with parent element */
+    /* use % instead of px and */
+    /* by default - 16px so will make it 10% to make calculation easy */
+    /* 16px - 100%, so 10px  - (100/16)*10 = 62.5% */
+    font-size: 62.5%;
+}
+body{
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.7;
+}
+ul li{
+    list-style: none;
+}
+a{
+    font-size: 1.6rem; /*which equals to 1.6*10=16px as 62.5%=10px */
+    text-decoration: none;
+}
+p, li{
+    font-size: 1.6rem;
+    margin-bottom: 0.5em; /* 0.5 em = 50% of parent font size*/
+    letter-spacing: 0.15em;
+    
+}
+h1, h2, h3{
+    margin-bottom: 0.5em;
+    letter-spacing: 0.15em;
+    font-weight: 500;
+}
+
+/* ############ utility class ############# */
+/* so we can use it anywhere else  */
+
+.container{
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+
+}
+.lg-heading{
+    /* large heading */
+    font-size: 3.5rem;
+}
+.md-heading{
+    /* medium heading */
+    font-size: 2.2rem;
+}
+.text-red{
+    color: #e63946;
+}
+.text-light{
+    color: #f4f4f4;
+}
+.text-black{
+    color: #333333;
+}
+.text-grey{
+    color: #555555;
+}
+.bg-dark{
+    background-color: #263238;
+}
+
+.btn{
+    display: inline-block;
+    padding: 0.5em 1.5em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin: 0.5em 0;
+}
+
+.btn-primary{
+    background-color: #f4f4f4;
+    border-radius: 10rem;
+}
+.btn-primary:hover{
+    background-color: gainsboro;
+}
+.btn-secondary{
+    border: 2px solid #e63946;
+    border-radius: 24px;
+    
+}
+.btn-secondary:hover{
+    background-color: #fcf3f2;
+}
+/* ################## header styling##################### */
+.header{
+    position: relative;
+    height: 95vh;
+    background: linear-gradient(rgb(0,0,0,0.5) , rgb(0,0,0,0.5)) , url('../img/citylight.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+.navbar{
+    padding: 1rem;
+    /* border: 2px solid white; */
+}
+
+.navbar .logo{
+    float: left;
+    /* border: #e63946 solid 2px; */
+}
+.navbar .nav-items{
+    float: right;
+    /* border:2px solid #e63946; */
+    margin-top: 1rem;
+}
+.navbar .nav-item{
+    display: inline-block;
+    padding: 1rem;
+    text-transform: uppercase;
+    /* border: 2px solid aqua; */
+}
+
+.navbar a:link,
+.navbar a:visited{
+    color: #f4f4f4;
+}
+
+.navbar a{
+    padding-bottom: 0.3rem;
+    /* padding: 0.3rem; */
+}
+.navbar a:hover{
+    border-bottom: 1px solid #f4f4f4;
+}
+
+.header-content{
+    position: absolute;
+    /* border: 1px solid red; */
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: linear-gradient(rgb(0,0,0,.2) , rgb(0,0,0,.2));
+}
+
+.header-content h1{
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.header-content p{
+    text-transform: uppercase;
+    
+}
+.navbar::after{
+    content: '';
+    clear: both;
+    display: block;
+}
+
+/* ############## Showcase style#####################3 */
+.showcase{
+    background: #ddd;
+    /* border:5px solid green; */
+    padding: 10rem 0;
+}
+
+.row{
+    /* border: 2px solid red; */
+    height: 350px;
+    background-color: #fff;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.363);
+    
+}
+.row1{
+    margin-bottom: 10rem;
+    
+}
+.row1 .img-box,
+.row2 .text-box{
+    float: left;
+    width: 50%;
+}
+.row1 .text-box,
+.row2 .img-box{
+    float: right;
+    width: 50%;
+}
+.row .img-box{
+    /* border: 2px solid red; */
+    height: 100%;
+}
+.row .text-box{
+    /* border: 2px solid green; */
+    padding: 3rem;
+}
+.row .img-box img{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /*it fits the img in the box and adjust according to the window size and phone size*/
+}
+.row .text-box p{
+    width: 100%;
+    height: 100%;
+}
+.row::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/* ####################### feature style################### */
+
+.feature{
+    padding: 10rem 0;
+    /* border: 2px solid red; */
+}
+.box-wrapper{
+    /* border: 2px solid green; */
+    box-shadow: 5px 5px 20px 0px rgba(0, 0, 0, 0.329);
+}
+.feature .box{
+    width: 33.33%;
+    float: left;
+    /* border: 2px solid black; */
+    padding: 2rem;
+    text-align: center;
+}
+
+.box-wrapper .box-2{
+    background-color: #e63946;
+}
+.box-wrapper .box-1,.box-3{
+    background-color: #263238;
+}
+.box-wrapper::after{
+    content: '';
+    clear: both;
+    display: block;
+}
+
+/* ################## footer style #####################263238 */
+
+.foot{
+    /* border: 2px solid black; */
+    text-align: center;
+    background-color: #263238;
+    padding: 2rem;
+}
+.social-media i{
+    padding-right: 20px;
+    font-size: 25px;
+}
+
+/* #################### About style ################ */
+
+.about{
+    border: 2px solid green;
+    padding: 5rem 0;
+}
+/* 1st method to put border  */
+/* .about-heading{
+    border-bottom: 4px solid red;
+} */
+
+/* 2nd method to put border  */
+.about-heading::after{
+    content: '';
+    display: block;
+    border: 3px solid #e63946;
+    width: 100%;
+}
+.listbox{
+    /* border: 2px solid red; */
+    text-align: center;
+    margin-top: 4rem;
+}
+.list-box1{
+    float: left;
+    width: 50%;
+}
+.list-box2{
+    float: right;
+    width: 50%;
+}
+.listbox::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.listbox li::before{
+    content: '\2713';
+    color: #e63946;
+    font-weight: bold;
+    padding-right: 8px;
+}
+.count{
+    margin-top: 6rem;
+    /* border: 2px  solid black; */
+}
+.count-item{
+    float: left;
+    width: 25%;
+    /* border: 2px solid red; */
+    text-align: center;
+}
+.count::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.count-item span{
+    font-size: 2rem;
+    font-weight: 700;
+
+}
+.count-item p{
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+/* ############# cta-banner################  */
+
+.cta-banner{
+    /* border: 2px solid red; */
+    margin-top: 5rem;
+    padding: 1rem;
+    background: linear-gradient(25deg, #d64c7f,#ee4758 50%);
+    box-shadow: 5px 5px 10px #33333375;
+    color: #f4f4f4;
+}
+
+.cta-banner .text{
+    float: left;
+    width: 60%;
+}
+.cta-banner .contact{
+    float: right;
+    width: 40%;
+    text-align: right;
+}
+.banner-line{
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    /* padding-left: 15px; */
+}
+.btn-cta{
+    text-align: center;
+    display: inline-block;
+    font-size: 3rem;
+    font-weight: 700;
+    border: 3px solid white;
+    text-transform: uppercase;
+    padding: 0.3rem 2.5rem;
+    letter-spacing: 0.5rem;
+    color: #f4f4f4;
+    /* margin-left: 100px; */
+}
+.cta-banner::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+
+/* ###############Contact us#################  */
+
+.contact-form{
+    /* border: 2px solid red; */
+    padding: 6rem 0;
+    
+}
+
+.form-wrapper .address{
+    /* border: 2px solid black; */
+    height: 760px;
+    float: left;
+    width: 50%;
+    padding: 1rem;
+    background: #fff;
+}
+.form-wrapper .query-form{
+    /* border: 2px solid green; */
+    float: right;
+    width: 50%;
+    font-size: 1.6rem;
+    background: #fff;
+    padding: 1rem;
+    height: 760px;
+}
+.form-wrapper::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.add-grp i{
+    color: #e63946;
+    font-size: 2.5rem;
+    display: inline-block;
+    padding-right: 1rem;
+    
+}
+.add-grp h2{
+    display: inline-block;
+    text-transform: uppercase;
+}
+.form-wrapper .add-grp{
+    margin-bottom: 3rem;
+}
+.form-wrapper img{
+    max-width: 90%;
+    min-height: 40rem;
+    object-fit: cover;
+    object-position: bottom;
+}
+
+/* #############  Form style####################  */
+
+.form-wrapper .query-form h1{
+    border-bottom: 3px solid #e63946;
+    width: 90%;
+}
+.form-wrapper .query-form label{
+    display: block;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+.form-wrapper .query-form input{
+    padding: 0.5rem;
+    width: 100%;
+}
+.form-wrapper .query-form .form-grp{
+    margin-bottom: 1.2rem;
+}
+.form-wrapper .query-form label::after{
+    content: ' * ';
+    color: red;
+}
+.form-wrapper .query-form textarea{
+    width: 100%;
+    height: 300px;
+    padding: 1rem 0;
+}
+.form-btn{
+    display: block;
+    margin: 0 auto;
+    padding: 0.5em 3em;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    background: #e63946;
+    color: #fff;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* ################## Responsive ###############  */
+@media (max-width: 500px){
+    html{
+        /* font-size: 8px; */
+        font-size: 50%;
+    }
+    .navbar .logo , .navbar .nav-items{
+        float: none;
+        text-align: center;
+        display: block;
+    }
+    .row{
+        width: 100%;
+        height: auto;
+    }
+    
+    .row .text-box,
+    .row .img-box{
+        float: none;
+        /* display: block; */
+        width: 100%;
+        text-align: center;
+
+    }
+    .feature .box{
+        float: none;
+        width: 100%;
+        text-align: center;
+        box-shadow: 5px 5px 20px 0px rgba(0, 0, 0, 0.521);
+    }
+    .feature .box-2,
+    .feature .box-3{
+        margin-top: 7rem;
+        
+    }
+    .box-wrapper{
+        /* border: 2px solid green; */
+        box-shadow: none
+    }
+    .cta-banner .text,
+    .cta-banner .contact{
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+    .form-wrapper .address,
+    .form-wrapper .query-form{
+        float: none;
+        width: 100%;
+        height: auto;
+        /* text-align: center; */
+        margin-bottom: 5rem;
+    }
+}
+@media(min-width:501px) and (max-width:768px){
+    
+    html{
+        /* font-size: 8px; */
+        font-size: 50%;
+    }
+    p{
+        font-size: 1.8rem;
+    }
+    .navbar .logo , .navbar .nav-items{
+        float: none;
+        text-align: center;
+        display: block;
+    }
+    .row{
+        width: 100%;
+        height: auto;
+    }
+    
+    .row .text-box,
+    .row .img-box{
+        float: none;
+        /* display: block; */
+        width: 100%;
+        text-align: center;
+
+    }
+    .feature .box{
+        float: none;
+        width: 100%;
+        text-align: center;
+        box-shadow: 5px 5px 20px 0px rgba(0, 0, 0, 0.521);
+    }
+    .feature .box-2,
+    .feature .box-3{
+        margin-top: 7rem;
+        
+    }
+    .box-wrapper{
+        /* border: 2px solid green; */
+        box-shadow: none
+    }
+    .cta-banner .text,
+    .cta-banner .contact{
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+    .form-wrapper .address,
+    .form-wrapper .query-form{
+        float: none;
+        width: 100%;
+        height: auto;
+        /* text-align: center; */
+        margin-bottom: 5rem;
+    }
+
+
+}
+
+@media(min-width:769px) and (max-width:1200px){
+    
+    html{
+        /* font-size: 8px; */
+        font-size: 9px;
+    }
+    .row .text-box h2{
+        font-size: 2.2rem;
+        font-weight: 500;
+    }
+}
+@media(orientation : landscape) and (max-height:500px){
+    
+    .header{
+        height: 90vmax;
+    }
+}
